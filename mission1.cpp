@@ -73,6 +73,7 @@ void Mission1::executing()
     std::cout<<"INDO P FRENTE"<<std::endl;
     this->commands->forward(DZ, 7); 
     // this->commands->forward(100, 7);
+     
     drone_pos.setY(drone_pos.getY() + DZ);
     yz++;
     std::cout<< "ZONA [" <<xz<<"]["<<yz<< "]"<<std::endl;
@@ -100,6 +101,9 @@ void Mission1::executing()
             this->commands->init();
             this->commands->up(10,7);
             this->commands->forward(DISTANCE_F_B,MOV_TIME);
+            this->commands->init();
+            this->commands->stop(8);
+            this->commands->init();
             // this->commands->forward(100, 7); 
             yz++;
             drone_pos.setY(drone_pos.getY() + DZ);
@@ -150,6 +154,8 @@ void Mission1::executing()
             // this->commands->back(60,MOV_TIME);
             this->commands->go(0, -50, 0, 4, 7);
             // this->commands->back(100, 8); 
+            this->commands->init();
+            this->commands->stop(8);
             this->commands->init();
             yz--;
             drone_pos.setY(drone_pos.getY() - DZ);
